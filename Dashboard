@@ -1,0 +1,19 @@
+@@ -0,0 +1,18 @@
+---
+title: "User Benefits"
+output:
+  flexdashboard::flex_dashboard:
+    theme: paper
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+source("C:/Users/USSG674953.CORP/Documents/Desktop/Work/LA Dashboard/Flex_Dashboard_04172023.R")
+```
+
+Peak {data-icon="ion-stats-bars"}
+=====================================  
+### UBMaps_C1_Vicente_vs_C1_Fairfax_Peak
+```{r interactive_map_peak}
+Peak_maps@map %>% setView(lat = 34.008308 , lng = -118.162090, zoom = 10)
+```
