@@ -602,13 +602,13 @@ hbwpk_rs5 <- ub.plot_rs(rcs.data_hbwpk[c("rs5", "rs1", "zone")],"Home Based Work
   mutate(Purpose ="Home Based Work - Productions",
          "Time Period" = 'Peak')
 
-#hbwpk_rs5_color_code = unique(hbwpk_rs5[c("Range", "plot.code", "Color")])
- # hbwpk_rs5_color_code <- hbwpk_rs5_color_code[order(-hbwpk_rs5_color_code$plot.code),]
+##hbwpk_rs5_color_code = unique(hbwpk_rs5[c("Range", "plot.code", "Color")])
+ ## hbwpk_rs5_color_code <- hbwpk_rs5_color_code[order(-hbwpk_rs5_color_code$plot.code),]
   
   
 
 
-hbwpk_cs5 <- ub.plot_cs(rcs.data_hbwpk[c("cs5", "cs1", "zone")],"Home Based Work Peak","Attractions")%>%
+#hbwpk_cs5 <- ub.plot_cs(rcs.data_hbwpk[c("cs5", "cs1", "zone")],"Home Based Work Peak","Attractions")%>%
                 rename("Person trips" = "cs1",
                        "User Benefits (mins)" = "cs5",
                        "TAZ" = "zone",
@@ -618,7 +618,7 @@ hbwpk_cs5 <- ub.plot_cs(rcs.data_hbwpk[c("cs5", "cs1", "zone")],"Home Based Work
                          "Time Period" = 'Peak')
   
   
-hbupk_rs5 <- ub.plot_rs(rcs.data_hbupk[c("rs5", "rs1", "zone")],"Home Based University Peak","Productions")%>%
+#hbupk_rs5 <- ub.plot_rs(rcs.data_hbupk[c("rs5", "rs1", "zone")],"Home Based University Peak","Productions")%>%
                 rename("Person trips" = "rs1",
                        "User Benefits (mins)" = "rs5",
                        "TAZ" = "zone",
@@ -627,7 +627,7 @@ hbupk_rs5 <- ub.plot_rs(rcs.data_hbupk[c("rs5", "rs1", "zone")],"Home Based Univ
                   mutate(Purpose ="Home Based University - Productions",
                          "Time Period" = 'Peak')
 
-hbupk_cs5 <- ub.plot_cs(rcs.data_hbupk[c("cs5", "cs1", "zone")],"Home Based University Peak","Attractions")%>%
+#hbupk_cs5 <- ub.plot_cs(rcs.data_hbupk[c("cs5", "cs1", "zone")],"Home Based University Peak","Attractions")%>%
                 rename("Person trips" = "cs1",
                        "User Benefits (mins)" = "cs5",
                        "TAZ" = "zone",
@@ -636,43 +636,7 @@ hbupk_cs5 <- ub.plot_cs(rcs.data_hbupk[c("cs5", "cs1", "zone")],"Home Based Univ
                   mutate(Purpose ="Home Based University - Attractions",
                          "Time Period" = 'Peak')
                 
-                
-hbopk_rs5 <- ub.plot_rs(rcs.data_hbopk[c("rs5", "rs1", "zone")],"Home Based Other Peak","Productions")%>%
-                rename("Person trips" = "rs1",
-                       "User Benefits (mins)" = "rs5",
-                       "TAZ" = "zone",
-                       "Color" = "plot.colors",
-                       "Range" = "breaks")%>%
-                  mutate(Purpose ="Home Based Other - Productions",
-                         "Time Period" = 'Peak')
-                
-                
-hbopk_cs5 <- ub.plot_cs(rcs.data_hbopk[c("cs5", "cs1", "zone")],"Home Based Other Peak","Attractions")%>%
-                rename("Person trips" = "cs1",
-                       "User Benefits (mins)" = "cs5",
-                       "TAZ" = "zone",
-                       "Color" = "plot.colors",
-                       "Range" = "breaks")%>%
-                  mutate(Purpose ="Home Based Other - Attractions",
-                         "Time Period" = 'Peak')
-                
-nhbpk_rs5 <- ub.plot_rs(rcs.data_nhbpk[c("rs5", "rs1", "zone")],"Non Home Based Peak","Productions")%>%
-                rename("Person trips" = "rs1",
-                       "User Benefits (mins)" = "rs5",
-                       "TAZ" = "zone",
-                       "Color" = "plot.colors",
-                       "Range" = "breaks")%>%
-                  mutate(Purpose ="Non Home Based - Productions",
-                         "Time Period" = 'Peak')
-
-nhbpk_cs5 <- ub.plot_cs(rcs.data_nhbpk[c("cs5", "cs1", "zone")],"Non Home Based Peak","Attractions")%>%
-                rename("Person trips" = "cs1",
-                       "User Benefits (mins)" = "cs5",
-                       "TAZ" = "zone",
-                       "Color" = "plot.colors",
-                       "Range" = "breaks")%>%
-                  mutate(Purpose ="Non Home Based - Attractions",
-                         "Time Period" = 'Peak')
+ 
 
 ##TAZ transformations##
 
@@ -686,72 +650,38 @@ colpal_hbwpk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_rs5_col$Color
 
 
 
-tazs.shape_hbwpk_cs5 =  merge(x = tazs.shape, y = hbwpk_cs5, by = c("TAZ"))  %>%
+#tazs.shape_hbwpk_cs5 =  merge(x = tazs.shape, y = hbwpk_cs5, by = c("TAZ"))  %>%
                         st_transform(crs =4326)
 
-tazs.shape_hbwpk_cs5_col = ColorPalette(tazs.shape_hbwpk_cs5)
+#tazs.shape_hbwpk_cs5_col = ColorPalette(tazs.shape_hbwpk_cs5)
 
-colpal_hbwpk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_cs5_col$Color, levels = levels((tazs.shape_hbwpk_cs5_col$Range)))
+#colpal_hbwpk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_cs5_col$Color, levels = levels((tazs.shape_hbwpk_cs5_col$Range)))
 
 
 
-tazs.shape_hbupk_rs5 =  merge(x = tazs.shape, y = hbupk_rs5, by = c("TAZ"))  %>%
+#tazs.shape_hbupk_rs5 =  merge(x = tazs.shape, y = hbupk_rs5, by = c("TAZ"))  %>%
                         st_transform(crs =4326)
 
-tazs.shape_hbupk_rs5_col = ColorPalette(tazs.shape_hbupk_rs5)
+#tazs.shape_hbupk_rs5_col = ColorPalette(tazs.shape_hbupk_rs5)
 
-colpal_hbupk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_rs5_col$Color, levels = levels((tazs.shape_hbupk_rs5_col$Range)))
+#colpal_hbupk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_rs5_col$Color, levels = levels((tazs.shape_hbupk_rs5_col$Range)))
 
 
 
-tazs.shape_hbupk_cs5 =  merge(x = tazs.shape, y = hbupk_cs5, by = c("TAZ"))  %>%
+#tazs.shape_hbupk_cs5 =  merge(x = tazs.shape, y = hbupk_cs5, by = c("TAZ"))  %>%
                         st_transform(crs =4326)
 
-tazs.shape_hbupk_cs5_col = ColorPalette(tazs.shape_hbupk_cs5)
+#tazs.shape_hbupk_cs5_col = ColorPalette(tazs.shape_hbupk_cs5)
 
-colpal_hbupk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_cs5_col$Color, levels = levels((tazs.shape_hbupk_cs5_col$Range)))
+#colpal_hbupk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_cs5_col$Color, levels = levels((tazs.shape_hbupk_cs5_col$Range)))
 
-
-
-tazs.shape_hbopk_rs5 =  merge(x = tazs.shape, y = hbopk_rs5, by = c("TAZ"))  %>%
-                        st_transform(crs =4326)
-
-tazs.shape_hbopk_rs5_col = ColorPalette(tazs.shape_hbopk_rs5)
-
-colpal_hbopk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbopk_rs5_col$Color, levels = levels((tazs.shape_hbopk_rs5_col$Range)))
-
-
-tazs.shape_hbopk_cs5 =  merge(x = tazs.shape, y = hbopk_cs5, by = c("TAZ"))  %>%
-                        st_transform(crs =4326)
-
-tazs.shape_hbopk_cs5_col = ColorPalette(tazs.shape_hbopk_cs5)
-
-colpal_hbopk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbopk_cs5_col$Color, levels = levels((tazs.shape_hbopk_cs5_col$Range)))
-
-
-
-tazs.shape_nhbpk_rs5 =  merge(x = tazs.shape, y = nhbpk_rs5, by = c("TAZ"))  %>%
-                        st_transform(crs =4326)
-
-tazs.shape_nhbpk_rs5_col = ColorPalette(tazs.shape_nhbpk_rs5)
-
-colpal_nhbpk_rs5 = leaflet::colorFactor(palette = tazs.shape_nhbpk_rs5_col$Color, levels = levels((tazs.shape_nhbpk_rs5_col$Range)))
-
-
-
-tazs.shape_nhbpk_cs5 =  merge(x = tazs.shape, y = nhbpk_cs5, by = c("TAZ"))  %>%
-                        st_transform(crs =4326)
-
-tazs.shape_nhbpk_cs5_col = ColorPalette(tazs.shape_nhbpk_cs5)
-
-colpal_nhbpk_cs5 = leaflet::colorFactor(palette = tazs.shape_nhbpk_cs5_col$Color, levels = levels((tazs.shape_nhbpk_cs5_col$Range)))
 
 #--------------------------------------------------------------------------------#
 #------------------------PLOTTING MAPS--------------------------------------------#
 #--------------------------------------------------------------------------------#
 
 popup = c("District","Person trips","User Benefits (mins)", "Purpose", "Time Period")
-cntr_crds <- c(34.008308, -118.162090)
+#cntr_crds <- c(34.008308, -118.162090)
 
 #coordinates(cntr_crds) <- cbind(cntr_crds[1] , cntr_crds[2]) 
 #----------------Peak Period-----------------------------------------------------#
@@ -762,48 +692,24 @@ Peak_maps <-mapview(tazs.shape_hbwpk_rs5,
                     layer.name = str_glue("HBW - Production User Benefits (mins)"),                                     
                     #map.types = "OpenStreetMap",
                     popup = popup)+
-  mapview(tazs.shape_hbwpk_cs5, 
-          zcol = "Range", 
-          col.region = colpal_hbwpk_cs5(tazs.shape_hbwpk_cs5$Range), 
-          layer.name = str_glue("HBW - Attraction User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_hbupk_rs5, 
-          zcol = "Range", 
-          col.region = colpal_hbupk_rs5(tazs.shape_hbupk_rs5$Range), 
-          layer.name = str_glue("HBU - Production User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_hbupk_cs5, 
-          zcol = "Range", 
-          col.region = colpal_hbupk_cs5(tazs.shape_hbupk_cs5$Range), 
-          layer.name = str_glue("HBU - Attraction User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_hbopk_rs5, 
-          zcol = "Range", 
-          col.region = colpal_hbopk_rs5(tazs.shape_hbopk_rs5$Range), 
-          layer.name = str_glue("HBO - Production User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_hbopk_cs5, 
-          zcol = "Range", 
-          col.region = colpal_hbopk_cs5(tazs.shape_hbopk_cs5$Range), 
-          layer.name = str_glue("HBO - Attraction User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_nhbpk_rs5, 
-          zcol = "Range", 
-          col.region = colpal_nhbpk_rs5(tazs.shape_nhbpk_rs5$Range), 
-          layer.name = str_glue("NHB - Production User Benefits (mins)"),
-          popup = popup, 
-          hide = TRUE)+
-  mapview(tazs.shape_nhbpk_cs5,
-          zcol = "Range",
-          col.region = colpal_nhbpk_cs5(tazs.shape_nhbpk_cs5$Range),
-          layer.name = str_glue("NHB - Attraction User Benefits (mins)"),
-          popup = popup,
-          hide = TRUE)+
+ # mapview(tazs.shape_hbwpk_cs5, 
+  #        zcol = "Range", 
+   #       col.region = colpal_hbwpk_cs5(tazs.shape_hbwpk_cs5$Range), 
+    #      layer.name = str_glue("HBW - Attraction User Benefits (mins)"),
+     #     popup = popup, 
+      #    hide = TRUE)+
+  #mapview(tazs.shape_hbupk_rs5, 
+   #       zcol = "Range", 
+    #      col.region = colpal_hbupk_rs5(tazs.shape_hbupk_rs5$Range), 
+     #     layer.name = str_glue("HBU - Production User Benefits (mins)"),
+      #    popup = popup, 
+       #   hide = TRUE)+
+  #mapview(tazs.shape_hbupk_cs5, 
+   #       zcol = "Range", 
+    #      col.region = colpal_hbupk_cs5(tazs.shape_hbupk_cs5$Range), 
+     #     layer.name = str_glue("HBU - Attraction User Benefits (mins)"),
+      #    popup = popup, 
+       #   hide = TRUE)
   mapview(All_lines,
           color = All_lines$color,
           alpha.regions = 0,
