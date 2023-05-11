@@ -639,30 +639,30 @@ tazs.shape_hbwpk_rs5_col = ColorPalette(tazs.shape_hbwpk_rs5)
 colpal_hbwpk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_rs5_col$Color, levels = levels((tazs.shape_hbwpk_rs5_col$Range)))
 
 
-# tazs.shape_hbwpk_cs5 =  merge(x = tazs.shape, y = hbwpk_cs5, by = c("TAZ"))  %>%
-#                         st_transform(crs =4326)
-#
-# tazs.shape_hbwpk_cs5_col = ColorPalette(tazs.shape_hbwpk_cs5)
-#
-# colpal_hbwpk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_cs5_col$Color, levels = levels((tazs.shape_hbwpk_cs5_col$Range)))
-#
-#
-#
-# tazs.shape_hbupk_rs5 =  merge(x = tazs.shape, y = hbupk_rs5, by = c("TAZ"))  %>%
-#                         st_transform(crs =4326)
-#
-# tazs.shape_hbupk_rs5_col = ColorPalette(tazs.shape_hbupk_rs5)
-#
-# colpal_hbupk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_rs5_col$Color, levels = levels((tazs.shape_hbupk_rs5_col$Range)))
-#
-#
-#
-# tazs.shape_hbupk_cs5 =  merge(x = tazs.shape, y = hbupk_cs5, by = c("TAZ"))  %>%
-#                         st_transform(crs =4326)
-#
-# tazs.shape_hbupk_cs5_col = ColorPalette(tazs.shape_hbupk_cs5)
-#
-# colpal_hbupk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_cs5_col$Color, levels = levels((tazs.shape_hbupk_cs5_col$Range)))
+tazs.shape_hbwpk_cs5 =  merge(x = tazs.shape, y = hbwpk_cs5, by = c("TAZ"))  %>%
+                        st_transform(crs =4326)
+
+tazs.shape_hbwpk_cs5_col = ColorPalette(tazs.shape_hbwpk_cs5)
+
+colpal_hbwpk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbwpk_cs5_col$Color, levels = levels((tazs.shape_hbwpk_cs5_col$Range)))
+
+
+
+tazs.shape_hbupk_rs5 =  merge(x = tazs.shape, y = hbupk_rs5, by = c("TAZ"))  %>%
+                        st_transform(crs =4326)
+
+tazs.shape_hbupk_rs5_col = ColorPalette(tazs.shape_hbupk_rs5)
+
+colpal_hbupk_rs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_rs5_col$Color, levels = levels((tazs.shape_hbupk_rs5_col$Range)))
+
+
+
+tazs.shape_hbupk_cs5 =  merge(x = tazs.shape, y = hbupk_cs5, by = c("TAZ"))  %>%
+                        st_transform(crs =4326)
+
+tazs.shape_hbupk_cs5_col = ColorPalette(tazs.shape_hbupk_cs5)
+
+colpal_hbupk_cs5 = leaflet::colorFactor(palette = tazs.shape_hbupk_cs5_col$Color, levels = levels((tazs.shape_hbupk_cs5_col$Range)))
 
 
 #--------------------------------------------------------------------------------#
@@ -700,8 +700,14 @@ Peak_maps <-  mapview(tazs.shape_hbwpk_rs5,
   #         popup = popup,
   #         hide = TRUE)
 
-
-
+list(
+  list(tazs.shape_hbwpk_rs5
+    ,'HBW - Production User Benefits (mins)')
+  ,list(tazs.shape_hbwpk_rs5
+     ,'Test_1')
+  ,list(tazs.shape_hbwpk_rs5
+     ,'Test_2')
+)
 
   mapview(All_lines,
           color = All_lines$color,
